@@ -1,0 +1,23 @@
+.container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      min-width: 450px;
+}
+
+.input {
+      font-size: 18px;
+      padding: 10px;
+      outline: none;
+      border: none;
+      background-color: rgb(0, 0, 0, 0.05);
+      border-radius: 10px;
+      color: rgb(0, 0, 0, 0.77);
+      resize: none;
+      font-family: Poppins;
+}
+
+.label {
+      color: rgb(0, 0, 0, 0.5);
+}
