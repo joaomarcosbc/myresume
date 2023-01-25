@@ -1,29 +1,28 @@
 .page {
-      display: block;
-      height: 842px;
-      width: 595px;
-      margin: 1cm auto;
-      border: 1px #D3D3D3 solid;
-      border-radius: 5px;
-      background: white;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: block;
+  height: 84.907563%;
+  width: 60%;
+  margin: 1cm auto;
+  border: 1px #d3d3d3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-
 @page {
-      size: A4;
-      margin: 0;
+  size: A4;
+  margin: 0;
 }
 
 @media print {
-      .page {
-            margin: 0;
-            border: initial;
-            border-radius: initial;
-            width: initial;
-            min-height: initial;
-            box-shadow: initial;
-            background: initial;
-            page-break-after: always;
-      }
+  .page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
 }
