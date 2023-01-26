@@ -21,7 +21,7 @@
 }
 
 .info {
-  flex: 1;
+  flex: 5;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,6 @@
 
 .info::-webkit-scrollbar-track {
   border-radius: 5px;
-  /* background-color: #DFE9EB; */
 }
 
 .info::-webkit-scrollbar-thumb {
@@ -58,10 +57,20 @@
 }
 
 .resume {
-  flex: 1;
-  position: sticky;
+  flex: 6;
+  /* position: sticky; */
   display: flex;
   justify-content: center;
   align-items: center;
 
+}
+
+@media (max-width: 1000px) {
+  .box {
+        flex-direction: column;
+  }
+  .info {
+    overflow-y: visible;
+    overflow-x: visible;
+  }
 }
