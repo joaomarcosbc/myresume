@@ -1,7 +1,7 @@
 .page {
   display: block;
-  width: 14cm;
-  height: 19.8cm;
+  width: 13.3cm;
+  height: 18.81cm;
   margin: 1cm auto;
   border: 1px #d3d3d3 solid;
   border-radius: 5px;
@@ -14,13 +14,11 @@
   margin: 0;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 590px) {
   .page {
-        transform: scale(0.8);
+    transform: scale(0.8);
   }
 }
-
-
 
 @media print {
   .page {

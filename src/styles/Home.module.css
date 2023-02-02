@@ -9,9 +9,7 @@
 
 .title {
   font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-
-
+  font-family: "Poppins", sans-serif;
 }
 
 .box {
@@ -29,8 +27,6 @@
   padding: 20px;
   overflow-y: scroll;
   overflow-x: hidden;
-
-
 }
 
 .info::-webkit-scrollbar {
@@ -45,8 +41,6 @@
 .info::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: rgb(0, 0, 0, 0.2);
-
-
 }
 
 .buttonDiv {
@@ -57,20 +51,31 @@
 }
 
 .resume {
-  flex: 6;
-  /* position: sticky; */
+  flex: 5;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1375px) {
   .box {
-        flex-direction: column;
+    flex-direction: column;
   }
+
   .info {
-    overflow-y: visible;
-    overflow-x: visible;
+    overflow: visible;
+  }
+
+  .resume {
+    min-height: 100vh;
+  }
+  .buttonDiv {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 529px) {
+  .resume {
+    display: none;
   }
 }

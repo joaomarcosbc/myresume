@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import styles from '@/styles/Home.module.css';
-import Resume from '@/components/resume';
-import Input from '@/components/input';
-import InfoBox from '@/components/infoBox';
-import Button from '@/components/button';
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
+import Resume from "@/components/resume";
+import Input from "@/components/input";
+import InfoBox from "@/components/infoBox";
+import Button from "@/components/button";
 
 export default function Home() {
   return (
@@ -19,20 +19,24 @@ export default function Home() {
           <h1>Your Resume</h1>
 
           <InfoBox title="Personal Details">
-            <Input title="Full Name" />
-            <Input title="Profession Name" />
+            <Input type="text" title="Full Name" />
+            <Input type="text" title="Job Title" />
+            <Input type="text" title="Email" />
+            <Input type="text" title="Phone" />
+            <Input type="text" title="Country" />
+            <Input type="text" title="City" />
           </InfoBox>
 
           <InfoBox title="Experience" column>
-            <Input title="Job Name" />
-            <Input title="Company Name" />
-            <Input title="Responsabilities" area />
+            <Input type="text" title="Job Title" />
+            <Input type="text" title="Company Name" />
+            <Input type="area" title="Responsabilities" area />
           </InfoBox>
           <InfoBox title="Education" column>
-            <Input title="Institution" />
+            <Input type="text" title="Institution" />
           </InfoBox>
           <div className={styles.buttonDiv}>
-            <Button style={{ alignSelf: 'end' }}>Save</Button>
+            <Button style={{ alignSelf: "end" }}>Save</Button>
           </div>
         </form>
         <div className={styles.resume}>
