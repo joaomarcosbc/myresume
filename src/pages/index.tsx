@@ -4,8 +4,11 @@ import Resume from "@/components/resume";
 import Input from "@/components/input";
 import InfoBox from "@/components/infoBox";
 import Button from "@/components/button";
+import { useState } from "react";
 
 export default function Home() {
+  const [fullName, setFullName] = useState<string>("");
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +22,13 @@ export default function Home() {
           <h1>Your Resume</h1>
 
           <InfoBox title="Personal Details">
-            <Input type="text" title="Full Name" />
+            <Input
+              type="text"
+              title="Full Name"
+              onChange={(event) => setFullName(event.target.value)}
+              value={fullName}
+            />
+
             <Input type="text" title="Job Title" />
             <Input type="text" title="Email" />
             <Input type="text" title="Phone" />
@@ -40,7 +49,7 @@ export default function Home() {
           </div>
         </form>
         <div className={styles.resume}>
-          <Resume />
+          <Resume fullName={fullName} />
         </div>
       </main>
     </div>

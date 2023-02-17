@@ -4,13 +4,44 @@ interface IInputProps {
   title: string;
   area?: boolean;
   type: string;
+  onChange?: (
+    event:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
+  value?: string;
 }
 
-export default function Input(this: any, { title, area, type }: IInputProps) {
+export default function Input(
+  this: any,
+  { title, area, type, onChange, value }: IInputProps
+) {
   const component = {
-    text: <input type="text" className={styles.input} />,
-    date: <input type="date" className={styles.input} />,
-    area: <textarea cols={30} rows={10} className={styles.input}></textarea>,
+    text: (
+      <input
+        type="text"
+        className={styles.input}
+        onChange={onChange}
+        value={value}
+      />
+    ),
+    date: (
+      <input
+        type="date"
+        className={styles.input}
+        onChange={onChange}
+        value={value}
+      />
+    ),
+    area: (
+      <textarea
+        cols={30}
+        rows={10}
+        className={styles.input}
+        onChange={onChange}
+        value={value}
+      ></textarea>
+    ),
   };
 
   return (
