@@ -10,11 +10,12 @@ interface IInputProps {
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   value?: string;
+  name?: string;
 }
 
 export default function Input(
   this: any,
-  { title, area, type, onChange, value }: IInputProps
+  { title, area, type, onChange, value, name }: IInputProps
 ) {
   const component = {
     text: (
@@ -23,6 +24,7 @@ export default function Input(
         className={styles.input}
         onChange={onChange}
         value={value}
+        name={name}
       />
     ),
     date: (
@@ -31,6 +33,7 @@ export default function Input(
         className={styles.input}
         onChange={onChange}
         value={value}
+        name={name}
       />
     ),
     area: (
@@ -40,6 +43,7 @@ export default function Input(
         className={styles.input}
         onChange={onChange}
         value={value}
+        name={name}
       ></textarea>
     ),
   };

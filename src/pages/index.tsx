@@ -7,7 +7,24 @@ import Button from "@/components/button";
 import { useState } from "react";
 
 export default function Home() {
-  const [fullName, setFullName] = useState<string>("");
+  interface IState {
+    [key: string]: string;
+  }
+
+  const [state, setState] = useState<IState>({
+    fullName: "",
+    jobTitle: "",
+    email: "",
+    phone: "",
+  });
+
+  function setStateValues(
+    e: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>
+  ) {
+    const name = e.currentTarget.name;
+    const value = e.currentTarget.value;
+    setState((prevState) => ({ ...prevState, [name]: value }));
+  }
 
   return (
     <div className={styles.container}>
@@ -25,13 +42,31 @@ export default function Home() {
             <Input
               type="text"
               title="Full Name"
-              onChange={(event) => setFullName(event.target.value)}
-              value={fullName}
+              onChange={(event) => setStateValues(event)}
+              value={state.fullName}
+              name="fullName"
             />
-
-            <Input type="text" title="Job Title" />
-            <Input type="text" title="Email" />
-            <Input type="text" title="Phone" />
+            <Input
+              type="text"
+              title="Job Title"
+              onChange={(event) => setStateValues(event)}
+              value={state.jobTitle}
+              name="jobTitle"
+            />
+            <Input
+              type="text"
+              title="Email"
+              onChange={(event) => setStateValues(event)}
+              value={state.email}
+              name="email"
+            />
+            <Input
+              type="text"
+              title="Phone"
+              onChange={(event) => setStateValues(event)}
+              value={state.phone}
+              name="phone"
+            />
             <Input type="text" title="Country" />
             <Input type="text" title="City" />
           </InfoBox>
@@ -49,7 +84,14 @@ export default function Home() {
           </div>
         </form>
         <div className={styles.resume}>
-          <Resume fullName={fullName} />
+          <Resume
+            info={{
+              fullName: state.fullName,
+              jobTitle: state.jobTitle,
+              phone: state.phone,
+              email: state.email,
+            }}
+          />
         </div>
       </main>
     </div>
